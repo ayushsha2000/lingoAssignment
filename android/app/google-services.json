@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "636158577756",
+    "project_id": "lingoassignment",
+    "storage_bucket": "lingoassignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:636158577756:android:e081751d7e0ccb996d2a99",
+        "android_client_info": {
+          "package_name": "com.example.lingoassignment"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqhbtcQuitX9CWBpmRI2nP0QCiNE6wGXE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
