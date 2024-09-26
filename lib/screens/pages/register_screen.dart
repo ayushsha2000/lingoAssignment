@@ -41,6 +41,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
         padding: const EdgeInsets.all(Spacing.spacingBase),
         child: Form(
           key: _formKey,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
