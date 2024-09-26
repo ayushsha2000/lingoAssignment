@@ -22,12 +22,17 @@ class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
+  final RegExp emailRegex = RegExp(
+    r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+  );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.accentColor,
       appBar: AppBar(
         backgroundColor: AppColors.accentColor,
+        elevation: 0,
         automaticallyImplyLeading: false,
         title: Text('MyNews',
             style: appBarStyle.copyWith(color: AppColors.primaryColor)),
@@ -46,6 +51,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email';
+                  } else if (!emailRegex.hasMatch(value)) {
+                    return 'Please enter a valid email address';
                   }
                   return null;
                 },
@@ -56,6 +63,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your password';
+                  } else if (value.length < 8) {
+                    return 'Password must be at least 8 characters long';
                   }
                   return null;
                 },

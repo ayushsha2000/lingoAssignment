@@ -119,7 +119,7 @@ class _NewsTextFieldState extends State<NewsTextField> {
               ),
               focusedErrorBorder: OutlineInputBorder(
                 borderSide: const BorderSide(
-                  color: AppColors.primaryColor,
+                  color: Colors.red,
                   width: 1,
                 ),
                 borderRadius: defaultBorderRadius,

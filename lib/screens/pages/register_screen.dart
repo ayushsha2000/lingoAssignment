@@ -22,11 +22,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  final RegExp emailRegex = RegExp(
+    r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$',
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.accentColor,
       appBar: AppBar(
+        elevation: 0,
         backgroundColor: AppColors.accentColor,
         automaticallyImplyLeading: false,
         title: Text('MyNews',
@@ -43,6 +48,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
               NewsTextField(
                 hint: "Name",
                 controller: nameController,
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return "Please enter a valid name";
+                  }
+                  return null;
+                },
               ),
               NewsTextField(
                 controller: emailController,
@@ -50,6 +61,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your email';
+                  } else if (!emailRegex.hasMatch(value)) {
+                    return 'Please enter a valid email address';
                   }
                   return null;
                 },
@@ -60,6 +73,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter your password';
+                  } else if (value.length < 8) {
+                    return 'Password must be at least 8 characters long';
                   }
                   return null;
                 },
