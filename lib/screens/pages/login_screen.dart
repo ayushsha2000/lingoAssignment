@@ -70,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              const Spacer(),
+              const Spacer(flex: 3),
               Column(
                 children: [
                   Padding(
@@ -92,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                     builder: (context) => const HomeScreen()));
                           }).catchError((e) {
                             ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(content: Text('Login Failed: $e')),
+                              SnackBar(content: Text('Login Failed: ${e.toString}')),
                             );
                           });
                         }

@@ -24,7 +24,7 @@ class AuthProvider extends ChangeNotifier {
     try {
       await _auth.signInWithEmailAndPassword(email: email, password: password);
     } catch (e) {
-      throw Exception("Failed to sign in");
+      throw Exception(e.toString());
     } finally {
       _setLoading(false);
     }

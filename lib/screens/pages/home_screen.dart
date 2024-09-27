@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
         backgroundColor: AppColors.primaryColor,
         title: Text(
-          "News App",
+          "MyNews",
           style: headlineStyle.copyWith(color: AppColors.whiteColor),
         ),
         actions: [

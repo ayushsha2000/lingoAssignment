@@ -80,7 +80,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   return null;
                 },
               ),
-              const Spacer(),
+              const Spacer(flex: 3),
               Column(
                 children: [
                   Padding(
